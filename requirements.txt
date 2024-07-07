@@ -1,0 +1,11 @@
+torch
+torchvision
+tensorboard
+tqdm
+ml-collections
+ninja
+scipy
+matplotlib
+ipykernel
+lmdb
+requests
