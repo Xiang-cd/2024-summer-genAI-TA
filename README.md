@@ -19,9 +19,7 @@ $$
 对此可以非常容易地在前向过程中采样任意$t$时刻的分布(记$\alpha_t:=1-\beta_t$并记$\bar{\alpha}_t:=\prod_{k=1}^t \alpha_k$):
 
 $$
-\begin{equation}
-    q\left(\mathbf{x}_t \mid \mathbf{x}_0\right)=\mathcal{N}\left(\mathbf{x}_t ; \sqrt{\bar{\alpha}_t} \mathbf{x}_0,\left(1-\bar{\alpha}_t\right) \mathbf{I}\right)
-\end{equation}
+q\left(\mathbf{x}_t \mid \mathbf{x}_0\right)=\mathcal{N}\left(\mathbf{x}_t ; \sqrt{\bar{\alpha}_t} \mathbf{x}_0,\left(1-\bar{\alpha}_t\right) \mathbf{I}\right)
 $$
 
 通过合理的方差序列选择，可以使得$q\left(\boldsymbol{x}_T\right) \approx \mathcal{N}\left(\boldsymbol{x}_T \mid \mathbf{0},   \boldsymbol{I}\right)$，
@@ -29,15 +27,12 @@ $$
 
 
 ### 反向过程
-
 扩散模型的反向过程是指从简单高斯噪声分布开始，逐渐去除噪声，从而得到数据采样的样本。
 其中去噪过程由一组参数$\theta$定义，最终的采样和由参数$\theta$定义的数据分布可以表述为$p_\theta\left(x_0\right):=\int p_\theta\left(x_{0: T}\right) d x_{1: T}$。
 具体的马尔科夫过程从$p(x_T) = \mathcal{N}(x_T; 0, \mathbf{I})$开始，反向过程中的联合分布可以表示为:
 
 $$
-\begin{equation}
-    p_\theta\left(\mathbf{x}_{0: T}\right):=p\left(\mathbf{x}_T\right) \prod^{T}_{t=1} p_\theta\left(\mathbf{x}_{t-1} \mid \mathbf{x}_t\right)
-\end{equation}
+p_\theta\left(\mathbf{x}_{0: T}\right):=p\left(\mathbf{x}_T\right) \prod^{T}_{t=1} p_\theta\left(\mathbf{x}_{t-1} \mid \mathbf{x}_t\right)
 $$
 
 
