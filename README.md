@@ -9,15 +9,15 @@
 其中前向过程是指不断向数据中添加随机噪声直到添加噪声后的数据分布十分接近于简单的高斯噪声分布。
 具体而言，给定$n$维度随机变量$x_0 \in \mathbb{R}^{n}$服从数据分布$q(x_0)$。扩散模型定义了一个从时间$t = 0$ (干净数据)到 $t = T > 0$(带噪声数据)的前向马尔科夫扩散过程。
 前向过程(包括$x_0$)的联合分布可以表示为:
+
 $$
-\begin{equation}
-    q(x_{0:T}) = q(x_0) \prod_{t=1}^T q(x_t \mid x_{t-1})
-\end{equation}
+q(x_{0:T}) = q(x_0) \prod_{t=1}^T q(x_t \mid x_{t-1})
 $$
 
 其中$q(x_t \mid x_{(t-1)})$为前向扩散核，其被定义为$\mathcal{N}\left(\mathbf{x}_t ; \sqrt{1-\beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I}\right)$，其中$\beta_t$为预先定义好的方差序列$0<\beta_1 … \beta_T<1$ 中$t$时刻对应的值。
 由于高斯分布的良好性质($\mathcal{N}\left(0, \sigma_1^2 \mathbf{I}\right)+\mathcal{N}\left(0, \sigma_2^2 \mathbf{I}\right) \sim \mathcal{N}\left(0,\left(\sigma_1^2+\sigma_2^2\right) \mathbf{I}\right)$)，
 对此可以非常容易地在前向过程中采样任意$t$时刻的分布(记$\alpha_t:=1-\beta_t$并记$\bar{\alpha}_t:=\prod_{k=1}^t \alpha_k$):
+
 $$
 \begin{equation}
     q\left(\mathbf{x}_t \mid \mathbf{x}_0\right)=\mathcal{N}\left(\mathbf{x}_t ; \sqrt{\bar{\alpha}_t} \mathbf{x}_0,\left(1-\bar{\alpha}_t\right) \mathbf{I}\right)
