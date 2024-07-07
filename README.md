@@ -38,7 +38,7 @@ $$
 
 其中 $p(x_{t-1} \mid x_t)$ 为反向扩散核，其被定义为由参数$\theta$根据当前噪声数据和时间$t$预测的为参数的高斯分布 $\mathcal{N}\left(\mathbf{x}_{t-1} \text{;} \boldsymbol{\mu}_\theta\left(\mathbf{x}_t, t\right), \boldsymbol{\Sigma}_\theta\left(\mathbf{x}_t, t\right)\right)$。
 
-请参考[论文](https://arxiv.org/abs/1503.03585)，写出扩散模型在噪声预测重参数化情况下的损失函数以及其推导。过程。
+请参考[论文1](https://arxiv.org/abs/2006.11239), [论文2](https://arxiv.org/abs/1503.03585)，写出扩散模型在噪声预测重参数化情况下的损失函数以及其推导过程。
 
 
 
