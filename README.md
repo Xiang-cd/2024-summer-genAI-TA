@@ -14,7 +14,7 @@ $$
 q(x_{0:T}) = q(x_0) \prod_{t=1}^T q(x_t \mid x_{t-1})
 $$
 
-其中 $q(x_t \mid x_{(t-1)})$ 为前向扩散核，其被定义为 $\mathcal{N}\left(\mathbf{x}_t ; \sqrt{1-\beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I}\right)$ ，其中 $\beta_t$ 为预先定义好的方差序列 $0<\beta_1 … \beta_T<1$ 中 $t$ 时刻对应的值。
+其中 $q(x_t \mid x_{(t-1)})$ 为前向扩散核，其被定义为 $\mathcal{N}\left(\mathbf{x}_t \text{;} \sqrt{1-\beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I}\right)$ ，其中 $\beta_t$ 为预先定义好的方差序列 $0<\beta_1 … \beta_T<1$ 中 $t$ 时刻对应的值。
 由于高斯分布的良好性质($\mathcal{N}\left(0, \sigma_1^2 \mathbf{I}\right)+\mathcal{N}\left(0, \sigma_2^2 \mathbf{I}\right) \sim \mathcal{N}\left(0,\left(\sigma_1^2+\sigma_2^2\right) \mathbf{I}\right)$)，
 对此可以非常容易地在前向过程中采样任意 $t$ 时刻的分布(记 $\alpha_t:=1-\beta_t$ 并记 $\bar{\alpha}_t:=\prod_{k=1}^t \alpha_k$ ):
 
@@ -36,7 +36,7 @@ $$
 p_\theta\left(\mathbf{x}_{0: T}\right):=p\left(\mathbf{x}_T\right) \prod^{T}_{t=1} p_\theta\left(\mathbf{x}_{t-1} \mid \mathbf{x}_t\right)
 $$
 
-其中 $p(x_{t-1} \mid x_t)$ 为反向扩散核，其被定义为由参数$\theta$根据当前噪声数据和时间$t$预测的为参数的高斯分布 $\mathcal{N}\left(\mathbf{x}_{t-1} ; \boldsymbol{\mu}_\theta\left(\mathbf{x}_t, t\right), \boldsymbol{\Sigma}_\theta\left(\mathbf{x}_t, t\right)\right)$。
+其中 $p(x_{t-1} \mid x_t)$ 为反向扩散核，其被定义为由参数$\theta$根据当前噪声数据和时间$t$预测的为参数的高斯分布 $\mathcal{N}\left(\mathbf{x}_{t-1} \text{;} \boldsymbol{\mu}_\theta\left(\mathbf{x}_t, t\right), \boldsymbol{\Sigma}_\theta\left(\mathbf{x}_t, t\right)\right)$。
 
 请参考[论文](https://arxiv.org/abs/1503.03585)，写出扩散模型在噪声预测重参数化情况下的损失函数以及其推导。过程。
 
