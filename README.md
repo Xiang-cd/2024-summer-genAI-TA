@@ -75,7 +75,7 @@ python main.py --config cifar10.yml --exp cf10 --doc logcf10 --ni --sample --tim
 开放题旨在引入扩散生成模型领域中比较关键的问题以及现有的相关工作, 激发同学们思考。
 
 ### 问题
-以stable diffusion为例，从效果、时间、显存需求三方面比较一下两类流行的采样加速方法: training-free的ODE solver (e.g. [DPM-solver](https://arxiv.org/abs/2206.00927)) 和 基于蒸馏的方法 (e.g. [LCM](https://arxiv.org/abs/2310.04378)）。测试的prompt list通过链接可获得。
+以stable diffusion为例，从效果、时间、显存需求三方面比较一下两类流行的采样加速方法: training-free的ODE solver (e.g. [DPM-solver](https://arxiv.org/abs/2206.00927)) 和 基于蒸馏的方法 (e.g. [LCM](https://arxiv.org/abs/2310.04378)）。测试的prompt list见```prompt.jsonl```。
 ### 评价指标
 * 效果：human reference，两种方法生成的图像你更倾向于哪一个
 * 推理时间：生成一张512*512需要的时间
