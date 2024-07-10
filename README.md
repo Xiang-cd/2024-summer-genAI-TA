@@ -90,3 +90,29 @@ python main.py --config cifar10.yml --exp cf10 --doc logcf10 --ni --sample --tim
 * 效果：human reference，两种方法生成的图像你更倾向于哪一个
 * 推理时间：生成一张512*512需要的时间
 * 显存：比较两种方法推理和训练需要的显存
+
+
+# 提交方式
+将你的报告提交到xcd19@mails.tsinghua.edu.cn, 以"2024-summer-genAI-TA-Diffusion-|你的名字|" 命名。
+
+## 报告格式
+标题, 你的名字, 你的学号, 课程名称。
+
+## loss 推导
+
+相关公式...
+
+## 代码实现
+
+###  具体代码
+
+```python
+your code implementation
+```
+
+### 采样结果
+报告训练时长, 训练步数, 以及最后的采样结果。
+
+
+## 开放题(Optional)
+报告有关开放题你的思考和实验结果。
