@@ -52,14 +52,22 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /t
 mkdir ./miniconda3
 bash /tmp/miniconda.sh -b -u -p ./miniconda3
 ./miniconda3/bin/conda init bash
+# restart terminal after conda init
 ```
 2. clone the repository and install requirements
 ```sh
 git clone git@github.com:Xiang-cd/2024-summer-genAI-TA.git
+cd 2024-summer-genAI-TA
 pip install -r requirements.txt -i  https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 3. download cifar10 dataset
 the container already has the cifar10 dataset at `/data/imagenet`, copy the tar file to the path the torchvision going to download the dataset or download it manually.
+```
+mkdir -p cf10self/datasets/cifar10
+cp /data/imagenet/cifar-10-python.tar.gz cf10self/datasets/cifar10
+mkdir -p cf10self/datasets/cifar10_test
+cp /data/imagenet/cifar-10-python.tar.gz cf10self/datasets/cifar10_test
+```
 
 4. run the training code
 ```sh

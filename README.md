@@ -53,14 +53,23 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /t
 mkdir ./miniconda3
 bash /tmp/miniconda.sh -b -u -p ./miniconda3
 ./miniconda3/bin/conda init bash
+# restart terminal after conda init
 ```
 2. 克隆相关仓库以及安装相关依赖
 ```sh
 git clone git@github.com:Xiang-cd/2024-summer-genAI-TA.git
+cd 2024-summer-genAI-TA
 pip install -r requirements.txt -i  https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 3. 下载cifar10数据集
 学期提供的容器中`/data/imagenet`目录下已经有了cifar10数据集, 将对应的数据集拷贝到torchvision将要下载到的路径即可使用, 同学们也可以自行下载和指定。
+```
+mkdir -p cf10self/datasets/cifar10
+cp /data/imagenet/cifar-10-python.tar.gz cf10self/datasets/cifar10
+mkdir -p cf10self/datasets/cifar10_test
+cp /data/imagenet/cifar-10-python.tar.gz cf10self/datasets/cifar10_test
+```
+
 
 4. 跑通训练代码
 ```sh
