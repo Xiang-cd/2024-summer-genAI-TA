@@ -69,7 +69,7 @@ mkdir -p cf10self/datasets/cifar10_test
 cp /data/imagenet/cifar-10-python.tar.gz cf10self/datasets/cifar10_test
 ```
 
-4. run the training code
+4. run the training code (better run in tmux)
 ```sh
 python main.py --config cifar10.yml --exp cf10self --doc logcf10self --ni
 ```

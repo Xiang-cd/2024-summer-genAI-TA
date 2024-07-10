@@ -71,7 +71,7 @@ cp /data/imagenet/cifar-10-python.tar.gz cf10self/datasets/cifar10_test
 ```
 
 
-4. 跑通训练代码
+4. 跑通训练代码(better run in tmux)
 ```sh
 python main.py --config cifar10.yml --exp cf10self --doc logcf10self --ni
 ```
