@@ -57,7 +57,7 @@ bash /tmp/miniconda.sh -b -u -p ./miniconda3
 ```
 2. 克隆相关仓库以及安装相关依赖
 ```sh
-git clone git@github.com:Xiang-cd/2024-summer-genAI-TA.git
+git clone https://github.com/Xiang-cd/2024-summer-genAI-TA.git
 cd 2024-summer-genAI-TA
 pip install -r requirements.txt -i  https://pypi.tuna.tsinghua.edu.cn/simple
 ```
