@@ -139,11 +139,16 @@ class Diffusion(object):
                 step += 1
 
                 x = x.to(self.device)
-                x = data_transform(self.config, x)
-                e = torch.randn_like(x)
-                b = self.betas
+                x = data_transform(self.config, x)  # X0, clean data
+                e = torch.randn_like(x) # sampled gaussian noise
+                b = self.betas # diffsuion schedule
+                # think what is the input of model
+                # output = model(input, t)
+                # here t is the timestep in the diffusion process
+                # output is the predicted x_{t-1}
+                # as the model is e-prediction, the loss is mse between the true noise and the predicted noise
 
-                raise NotImplementedError("请填写 loss 的计算代码, 并将loss赋值给`loss`变量")
+                raise NotImplementedError("please fill how to compute the loss")
 
                 tb_logger.add_scalar("loss", loss, global_step=step)
 
