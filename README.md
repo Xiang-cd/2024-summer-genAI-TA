@@ -78,7 +78,7 @@ python main.py --config cifar10.yml --exp cf10self --doc logcf10self --ni
 
 5. 进行采样测试
 ```sh
-python main.py --config cifar10.yml --exp cf10 --doc logcf10 --ni --sample --timesteps 100 --fid
+python main.py --config cifar10.yml --exp cf10self --doc cf10self --ni --sample --timesteps 100 --fid
 ```
 
 ## 开放题
