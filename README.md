@@ -74,17 +74,9 @@ python main.py --config cifar10.yml --exp cf10 --doc logcf10 --ni --sample --tim
 ## 开放题
 开放题旨在引入扩散生成模型领域中比较关键的问题以及现有的相关工作, 激发同学们思考。
 
-### 扩散模型生成的崩坏问题
-扩散模型生成的图像存在人脸, 人手的崩坏问题, 以及不一致等问题。
-例如[Sora生成问题](https://www.reddit.com/r/OpenAI/comments/1arrqpz/funny_glitch_with_sora_interesting_how_it_looks/)。
-如何解决扩散模型生成的崩坏问题是一项重要的研究方向, 也是困扰工业界的重要问题。一部分的研究工作显示, 增大模型能力能够缓解部分问题。
-[基于人类偏好的方法](https://arxiv.org/abs/2311.12908)也能够一定程度上缓解这一问题。
-做到稳定鲁棒的缓解崩坏将带来巨大的商业价值和学术影响力。
-对此, 同学们可以考虑在[stable diffusion](https://github.com/CompVis/stable-diffusion)进行采样, 得到崩坏样本, 研究崩坏出现的规律, 提出解决方案。
-
-
-### 扩散模型采样加速
-扩散模型需要通过多步的迭代来生成, 上千步的迭代使得推理成本十分昂贵, 如何加速扩散模型的采样是重要的研究议题。
-[DPM-solver](https://arxiv.org/abs/2206.00927)是一种广泛采用的采样加速方法, 能够做到20步左右生成高质量样本, 但依然难做到单步采样。
-基于蒸馏的方法例如[CM](https://github.com/openai/consistency_models?tab=readme-ov-file), [LCM](https://arxiv.org/abs/2310.04378), 通过训练的方法来加速采样。
-同学们可以阅读相关论文, 尝试运行相关的代码, 并体会不同加速方法的效果。
+### 问题
+以stable diffusion为例，从效果、时间、显存需求三方面比较一下两类流行的采样加速方法: training-free的ODE solver (e.g. [DPM-solver](https://arxiv.org/abs/2206.00927)) 和 基于蒸馏的方法 (e.g. [LCM](https://arxiv.org/abs/2310.04378)）。测试的prompt list见```prompt.jsonl```。
+### 评价指标
+* 效果：human reference，两种方法生成的图像你更倾向于哪一个
+* 推理时间：生成一张512*512需要的时间
+* 显存：比较两种方法推理和训练需要的显存
